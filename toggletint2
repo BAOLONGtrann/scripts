@@ -1,0 +1,9 @@
+#/usr/bin/bash
+APP=tint2
+if [ `pidof $APP` ]; then
+	killall $APP
+	exit 1
+else
+	$APP &
+fi
+exit
