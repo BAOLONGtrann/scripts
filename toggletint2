@@ -1,4 +1,4 @@
-#/usr/bin/bash
+#!/bin/sh
 APP=tint2
 if [ `pidof $APP` ]; then
 	killall $APP
