@@ -1,0 +1,6 @@
+#!/bin/sh
+cd ~
+scrot -s -q 100 '.dummy.png'
+chromium .dummy.png &
+sleep 10
+rm -f .dummy.png
