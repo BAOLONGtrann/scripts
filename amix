@@ -1,22 +1,22 @@
 #!/bin/sh
 
 case $1 in
-up)
-    amixer set Master 5%+ unmute -q
-    ;;
-down)
-    amixer set Master 5%- unmute -q
-    ;;
-*)
-    amixer set Master toggle -q
-    ;;
+    up)
+        amixer set Master 5%+ unmute -q
+        ;;
+    down)
+        amixer set Master 5%- unmute -q
+        ;;
+    *)
+        amixer set Master toggle -q
+        ;;
 esac
 
 CURVOL=`amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]%' | awk '!x[$0]++'`
 OFF=`amixer get Master | awk '$0~/%/{print $6}' | tr -d '[]%' | awk '!x[$0]++'`
 
 if [ "$CURVOL" -eq 0 ] || [ "$OFF" == "off" ]; then
-	volnoti-show -m
+    volnoti-show -m
 else
-	volnoti-show $CURVOL
+    volnoti-show $CURVOL
 fi
