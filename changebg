@@ -1,2 +1,2 @@
-#! /usr/bin/bash
+#!/bin/sh
 feh --bg-fill --randomize --recursive ~/.wallies/* &
