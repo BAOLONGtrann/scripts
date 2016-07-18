@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xset -b
+syndaemon -i 2 -d -t -k &
+changebg &
+redshift &
+numlockx &
+xrandr --dpi 100 &
+volnoti -t 2 &
